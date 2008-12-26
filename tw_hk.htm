@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--This program is licensed under GPL v3.0, please refer to the gpl-3.0.txt file//-->
 <HTML>
 <HEAD>
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=utf-8">
@@ -6,21 +7,17 @@
 <script type="text/javascript"><!--
 function toHK() {
   var inText=document.getElementById('twText').value;
-
   for ( key in data ) {
     inText=inText.replace(RegExp(key, 'g'), "*"+data[key]+"*");
-    document.getElementById('hkText').value=inText;
   }
-  alert('Done!');
+  document.getElementById('hkText').value=inText;
 }
 function toTW() {
   var inText=document.getElementById('hkText').value;
-
   for ( key in data ) {
     inText=inText.replace(RegExp(data[key], 'g'), "*"+key+"*");
-    document.getElementById('twText').value=inText;
   }
-  alert('Done!');
+  document.getElementById('twText').value=inText;
 }
 //--></script>
 </HEAD>
