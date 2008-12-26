@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=utf-8">
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript"><!--
+function toHK() {
+  var inText=document.getElementById('twText').value;
+
+  for ( key in data ) {
+    inText=inText.replace(RegExp(key, 'g'), "*"+data[key]+"*");
+    document.getElementById('hkText').value=inText;
+  }
+  alert('Done!');
+}
+function toTW() {
+  var inText=document.getElementById('hkText').value;
+
+  for ( key in data ) {
+    inText=inText.replace(RegExp(data[key], 'g'), "*"+key+"*");
+    document.getElementById('twText').value=inText;
+  }
+  alert('Done!');
+}
+//--></script>
+</HEAD>
+<BODY>
+<table>
+<tr><td rowspan="2">
+TW<br/>
+<textarea id='twText' rows="20" cols="50"></textarea>
+</td><td>
+<input type="button" value="->" onclick="toHK();"/>
+</td><td rowspan="2">
+HK<br/>
+<textarea id='hkText' rows="20" cols="50"></textarea>
+</td></tr>
+<tr><td>
+<input type="button" value="<-" onclick="toTW();"/>
+</td></tr>
+<tr><td>
+</td><td>
+</td><td>
+<b>REF:</b><br/>
+<a href="http://www.legislation.gov.hk/eng/glossary/homeglos.htm">Department of Justice: Bilingual Laws Information System</a>
+</td></tr>
+</table>
+</BODY>
+</HTML>
